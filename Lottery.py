@@ -1,5 +1,6 @@
 import random
 import time
+#version 2
 
 num1 = "x"
 num2 = "x"
