@@ -2,13 +2,7 @@ import random
 import time
 #version 2
 
-num1 = "x"
-num2 = "x"
-num3 = "x"
-num4 = "x"
-num5 = "x"
-num6 = "x"
-num7 = "x"
+correct = ['x','x','x','x','x','x','x']
 numCorrect = 0
 stopProgram = False
 numsint = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
