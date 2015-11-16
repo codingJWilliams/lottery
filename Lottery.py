@@ -17,11 +17,7 @@ def numChecker(check_string):
     else:
         return False
 chosen = []
-userNumbers = input(
-    '                             National Lotto! \n   -Please enter your numbers to have a chance of winning the' +
-    'JACKPOT!\n\n   -Please enter 7 numbers to be in with a chance to win 1,000,000!\n>')
-
-# input checking
+userNumbers = input('                             National Lotto! \n   -Please enter your numbers to have a chance of winning the' + 'JACKPOT!\n\n   -Please enter 7 numbers to be in with a chance to win 1,000,000!\n>')
 try:
     userNumbers[7]
 except:
@@ -30,12 +26,10 @@ if numCorrect == 0:
     print("YOU HAVE TRIED TO CHEAT THE LOTTERY SYSTEM. WOE BETIDE YE")
     stopProgram = True
 else:
-
     allNumbers = numChecker(userNumbers)
     if not allNumbers:
         print("YOU HAVE TRIED TO CHEAT THE LOTTERY SYSTEM. WOE BETIDE YE")
         stopProgram = True
-
 if not stopProgram:
     # Code for the lotto system.
     numCorrect = 0
@@ -46,27 +40,21 @@ if not stopProgram:
     if compnum[0] == userNumbers[0]:
         numCorrect += 1
         correct[0] = userNumbers[0]
-
     if compnum[1] == userNumbers[1]:
         numCorrect += 1
         correct[1] = userNumbers[1]
-
     if compnum[2] == userNumbers[2]:
         numCorrect += 1
         correct[2] = userNumbers[2]
-
     if compnum[3] == userNumbers[3]:
         numCorrect += 1
         correct[3] = userNumbers[3]
-
     if compnum[4] == userNumbers[4]:
         numCorrect += 1
         correct[4] = userNumbers[4]
-
     if compnum[5] == userNumbers[5]:
         numCorrect += 1
         correct[5] = userNumbers[5]
-        
     if compnum[6] == userNumbers[6]:
         numCorrect += 1
         correct[6] = userNumbers[6]
