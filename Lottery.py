@@ -1,7 +1,4 @@
-import random
-import time
-#version 2 compacted
-
+import random,time
 correct = ['x','x','x','x','x','x','x']
 numCorrect = 0
 stopProgram = False
@@ -26,8 +23,7 @@ if numCorrect == 0:
     print("YOU HAVE TRIED TO CHEAT THE LOTTERY SYSTEM. WOE BETIDE YE")
     stopProgram = True
 else:
-    allNumbers = numChecker(userNumbers)
-    if not allNumbers:
+    if not numChecker(userNumbers):
         print("YOU HAVE TRIED TO CHEAT THE LOTTERY SYSTEM. WOE BETIDE YE")
         stopProgram = True
 if not stopProgram:
@@ -37,47 +33,15 @@ if not stopProgram:
     for i in range(7):
         chars.append(random.choice(numsint))
     compnum = sum(chars)
-    if compnum[0] == userNumbers[0]:
-        numCorrect += 1
-        correct[0] = userNumbers[0]
-    if compnum[1] == userNumbers[1]:
-        numCorrect += 1
-        correct[1] = userNumbers[1]
-    if compnum[2] == userNumbers[2]:
-        numCorrect += 1
-        correct[2] = userNumbers[2]
-    if compnum[3] == userNumbers[3]:
-        numCorrect += 1
-        correct[3] = userNumbers[3]
-    if compnum[4] == userNumbers[4]:
-        numCorrect += 1
-        correct[4] = userNumbers[4]
-    if compnum[5] == userNumbers[5]:
-        numCorrect += 1
-        correct[5] = userNumbers[5]
-    if compnum[6] == userNumbers[6]:
-        numCorrect += 1
-        correct[6] = userNumbers[6]
-    if numCorrect == 1:
-        prize = "0 :("
-    elif numCorrect == 2:
-        prize = "10"
-    elif numCorrect == 3:
-        prize = "50"
-    elif numCorrect == 4:
-        prize = "1000"
-    elif numCorrect == 5:
-        prize = "50,000"
-    elif numCorrect == 6:
-        prize = "250000"
-    elif numCorrect == 7:
-        prize = "a jackpot of 1,000,000"
-    else:
-        prize = "nothing, sorry :-( "
+    for a in range(7):
+        if compnum[a] == userNumbers[a]:
+            numCorrect += 1
+            correct[a] = userNumbers[a]
+    jsonPrizes = {'0':'nothing, sorry :-(','1':'0 :(','2':'10','3':'50','4':'1000','5':'50,000','6':'250,000','7':'a jackpot of 1,000,000'}
     print("You won:")
     time.sleep(0.5)
     print("*drum-roll*")
     time.sleep(1.5)
-    print("You've won {0}, with {1} numbers.\nThe numbers that matched were:\n~{2}".format(prize, numCorrect, winnings = correct[0] + correct[1] + correct[2] + correct[3] + correct[4] + correct[5] + correct[6]))
+    print("You've won {0}, with {1} numbers.\nThe numbers that matched were:\n~{2}".format(jsonPrizes[str(numCorrect)], numCorrect, winnings = correct[0] + correct[1] + correct[2] + correct[3] + correct[4] + correct[5] + correct[6]))
 elif stopProgram:
     exit()
