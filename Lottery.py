@@ -14,7 +14,7 @@ def numChecker(check_string):
     else:
         return False
 chosen = []
-userNumbers = input('                             National Lotto! \n   -Please enter your numbers to have a chance of winning the' + 'JACKPOT!\n\n   -Please enter 7 numbers to be in with a chance to win 1,000,000!\n>')
+userNumbers = input('                             National Lotto! \n   -Please enter your numbers to have a chance of winning the' + ' JACKPOT!\n\n   -Please enter 7 numbers to be in with a chance to win 1,000,000!\n>')
 try:
     userNumbers[7]
 except:
@@ -32,7 +32,7 @@ if not stopProgram:
     chars = []
     for i in range(7):
         chars.append(random.choice(numsint))
-    compnum = sum(chars)
+    compnum = str(chars[0]) + str(chars[1]) + str(chars[2]) + str(chars[3]) + str(chars[4]) + str(chars[5]) + str(chars[6])
     for a in range(7):
         if compnum[a] == userNumbers[a]:
             numCorrect += 1
@@ -42,6 +42,6 @@ if not stopProgram:
     time.sleep(0.5)
     print("*drum-roll*")
     time.sleep(1.5)
-    print("You've won {0}, with {1} numbers.\nThe numbers that matched were:\n~{2}".format(jsonPrizes[str(numCorrect)], numCorrect, winnings = correct[0] + correct[1] + correct[2] + correct[3] + correct[4] + correct[5] + correct[6]))
+    print("You've won {0}, with {1} numbers.\nThe numbers that matched were:\n~{2}".format(jsonPrizes[str(numCorrect)], numCorrect, correct[0] + correct[1] + correct[2] + correct[3] + correct[4] + correct[5] + correct[6]))
 elif stopProgram:
     exit()
