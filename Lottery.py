@@ -1,3 +1,4 @@
+#Lottery system
 import random,time
 correct = ['x','x','x','x','x','x','x']
 numCorrect = 0
